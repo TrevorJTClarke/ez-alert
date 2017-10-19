@@ -1,0 +1,89 @@
+html {
+  background: #3f4655; }
+
+body {
+  background: #252a35;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#3f4655), to(#252a35));
+  background: -o-linear-gradient(top, #3f4655, #252a35);
+  background: linear-gradient(to bottom, #3f4655, #252a35);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #f2f2f2;
+  height: 100vh;
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0; }
+  body h1 {
+    font-size: 24pt;
+    font-weight: 200;
+    text-align: center; }
+  body h3 {
+    font-size: 16pt;
+    font-weight: 300;
+    text-align: center; }
+
+.examples {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 30px auto 30px;
+  width: 80vw; }
+
+.example {
+  background: white;
+  -webkit-box-shadow: 0 1px 10px -1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 10px -1px rgba(0, 0, 0, 0.1);
+  margin: 12px 0;
+  width: 49%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .example .example-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 20px 0; }
+    .example .example-content div {
+      padding: 0 20px;
+      text-align: center; }
+    .example .example-content p {
+      text-align: center; }
+  .example .example-details {
+    border-top: 1px solid rgba(0, 0, 0, 0.1); }
+  .example button {
+    border: 1px solid grey;
+    color: black;
+    display: block;
+    font-size: 12pt;
+    padding: 10px 12px;
+    margin: 0 auto 10px;
+    min-width: 200px;
+    text-align: center; }
+  .example p {
+    color: #363636;
+    padding: 0 12px; }
+  .example code {
+    display: block;
+    background: #3c3c3c;
+    color: #1fbf1f;
+    padding: 12px;
+    overflow: scroll; }

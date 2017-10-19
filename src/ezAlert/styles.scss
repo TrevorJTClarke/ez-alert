@@ -1,0 +1,113 @@
+// Variables
+$black:                     #222 !default;
+$white:                     #fff !default;
+$default:                   #e1e8ec !default;
+$success:                   #3eb56e !default;
+$warn:                      #67a4bf !default;
+$error:                     #c74444 !default;
+$gutter:                    10px;
+
+:host {
+  position: fixed;
+  font-family: Helvetica, Arial, sans-serif;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.indicator {
+  background: transparentize($black, .9);
+  display: flex;
+  margin: 0;
+  padding: 0 ($gutter / 2);
+  position: relative;
+  width: 36px;
+
+  .icon {
+    color: $white;
+    display: block;
+    font-size: 24pt;
+    font-style: normal;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.content {
+  color: $black;
+  flex: 1 1 0;
+  padding: ($gutter - 3) $gutter;
+  position: relative;
+  vertical-align: top;
+  width: calc(100% - 120px);
+
+  h3 {
+    font-size: 12pt;
+    font-weight: 500;
+    line-height: 17pt;
+    letter-spacing: 0.01em;
+    margin: 0;
+  }
+
+  p {
+    line-height: 12pt;
+    font-size: 10pt;
+    font-weight: 300;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    word-wrap: break-word;
+  }
+}
+
+.instance {
+  background: $default;
+  box-shadow: 0 2px 10px -2px transparentize($black, .7);
+  border-radius: 3px;
+  display: flex;
+  margin-top: -100px;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  right: $gutter;
+  top: $gutter;
+  transition: all 220ms ease-in-out 40ms;
+  width: 25%;
+
+  &[success] {
+    background: $success;
+
+    .content {
+      color: $white;
+    }
+  }
+
+  &[warn] {
+    background: $warn;
+
+    .content {
+      color: $white;
+    }
+  }
+
+  &[error] {
+    background: $error;
+
+    .content {
+      color: $white;
+    }
+  }
+
+  &[info] {
+    background: $default;
+  }
+}

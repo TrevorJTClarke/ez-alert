@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>EZ Alert</title>
+<link href="style.bundle.css" rel="stylesheet"></head>
+<body>
+  <ez-alert></ez-alert>
+
+  <h1>EZ Alert</h1>
+  <h3>Alert web component with configurable options</h3>
+
+  <div class="examples">
+
+    <div class="example">
+      <div class="example-content">
+        <p>Click to trigger standard alerts!</p>
+        <div>
+          <button onclick="triggerAlert('info', '🍩', 'Welcome!', 'This is a default message')">Default</button>
+          <button onclick="triggerAlert('success', '🍻', 'Success!', 'You should be happy now!')">Success</button>
+          <button onclick="triggerAlert('warn', '🐊', 'Uh oh!', 'Be careful not to click that!')">Warning</button>
+          <button onclick="triggerAlert('error', '💩', 'Error!', 'Something 💩y happened.')">Error</button>
+          <button onclick="resetAlert()">Reset Alerts</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-details">
+        <p>UI Inspired by <a href="https://dribbble.com/shots/2689073-Simple-Growl-Notification" target="_blank">John Oddo</a></p>
+        <p>Example usage</p>
+        <code>
+          &lt;ez-alert&gt;&lt;/ez-alert&gt;
+        </code>
+        <p>Example methods</p>
+        <code>
+          var ezAlert = document.querySelector('ez-alert')
+          <br><br>
+          ezAlert.info({<br>
+            icon: '👍',<br>
+            title: 'Welcome!',<br>
+            message: 'This is a default message',<br>
+            actions: [{<br>
+              type: 'next',<br>
+              callback: (e, args) => { console.log('test! args:', args) }<br>
+            }]<br>
+          })
+        </code>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script type="text/javascript">
+    // // NOTE: This is for example purposes only!
+    var ezAlert = document.querySelector('ez-alert')
+
+    function triggerAlert(type = 'info', icon = '👍', title = '', message = '') {
+      ezAlert[type]({
+        icon,
+        title,
+        message,
+        actions: [{
+          type: 'next',
+          callback: (e, args) => { console.log('test! args:', args) }
+        }]
+      })
+    }
+
+    function resetAlert() {
+      ezAlert.reset()
+    }
+
+    // // wait past components loaded
+    // window.onload = (() => {
+    //   console.log('ezAlert', ezAlert)
+    //
+    //   // ezAlert.info({
+    //   //   icon: '👍',
+    //   //   title: 'Error Somewhere',
+    //   //   message: 'This is just terrible!',
+    //   //   actions: [{
+    //   //     type: 'next',
+    //   //     callback: (e, args) => { console.log('test! args:', args) }
+    //   //   }]
+    //   // })
+    // })
+
+  </script>
+<script type="text/javascript" src="app.bundle.js"></script></body>
+</html>
